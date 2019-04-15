@@ -16,7 +16,7 @@ router.post('/', (req, res, next) => {
         const token = jsonWebToken.sign(user.dataValues, myJWTSecretKey);
         res.json({
             token_types: 'Bearer',
-            expiresIn: '24h',
+            expiresIn: 60 * 60 * 24,
             token: token,
             email: email
         });
